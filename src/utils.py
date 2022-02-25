@@ -197,6 +197,9 @@ class States:
             acceleration = self.force/self.mass
         return self.position, self.velocity, acceleration
 
+    def __repr__(self) -> str:
+        return "position="+self.position.__repr__() + ", velocity="+self.velocity.__repr__() + ", force=" + self.force.__repr__()
+
 
 def reload(list_of_modules):
     for module in list_of_modules:
