@@ -339,7 +339,7 @@ def cal_graph(params, graph, eorder=None, mpass=1,
     ke_params = params["ke"]
 
     num_species = 1
-
+    
     def onehot(n):
         def fn(n):
             out = jax.nn.one_hot(n, num_species)

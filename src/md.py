@@ -77,10 +77,10 @@ def solve_dynamics(init_state, apply, runs=100, stride=10):
 def minimize(R, params, shift, pot_energy_fn, steps=10, gtol=1.0e-7, lr=1.0e-3):
     opt_init, opt_update, get_params = optimizers.adam(lr)
     opt_state = opt_init(R)
-
+    
     def gloss2(R):
         return value_and_grad(lambda R: pot_energy_fn(R, params))(R)
-
+    
     print(f"Step\tPot. Eng.\t\tTolerance")
     for i in range(steps):
         v, grads_ = gloss2(R)
